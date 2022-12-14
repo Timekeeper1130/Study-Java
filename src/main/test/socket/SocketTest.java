@@ -1,10 +1,11 @@
+package socket;
+
 import org.junit.Assert;
 import org.junit.Test;
-import sockets.GreetClient;
 
 import java.io.IOException;
 
-public class TestMain {
+public class SocketTest {
 
     @Test
     public void givenGreetingClient_whenServerRespondsWhenStarted_thenCorrect() throws IOException {
