@@ -25,8 +25,7 @@ public class GreetServer {
         String greeting = in.readLine();
         if ("hello server".equals(greeting)) {
             out.println("hello client");
-        }
-        else {
+        } else {
             out.println("unrecognised greeting");
         }
     }
