@@ -12,7 +12,10 @@ public class EchoMultiServer {
 
     public void start(int port) throws IOException {
         serverSocket = new ServerSocket(port);
+        int clientCount = 0;
         while (true){
+            // accept等待客户端的连接
+            System.out.println("--等待第 " + ++clientCount + "个客户端连接--");
             new EchoClientHandler(serverSocket.accept()).start();
         }
     }
