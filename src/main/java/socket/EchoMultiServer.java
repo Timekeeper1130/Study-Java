@@ -10,12 +10,17 @@ import java.net.Socket;
 public class EchoMultiServer {
     private ServerSocket serverSocket;
 
+    public static void main(String[] args) throws IOException {
+        EchoMultiServer server = new EchoMultiServer();
+        server.start(4444);
+    }
+
     public void start(int port) throws IOException {
         serverSocket = new ServerSocket(port);
         int clientCount = 0;
         while (true){
             // accept等待客户端的连接
-            System.out.println("--等待第 " + ++clientCount + "个客户端连接--");
+            System.out.println("--等待第" + ++clientCount + "个客户端连接--");
             new EchoClientHandler(serverSocket.accept()).start();
         }
     }

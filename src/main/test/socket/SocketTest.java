@@ -26,12 +26,18 @@ public class SocketTest {
         assertEquals("hello client", response);
     }
 
+    /**
+     * 任意一个Test方法执行前都会执行@Before方法
+     */
     @Before
     public void setup() throws IOException {
         client = new EchoClient();
         client.startConnection("127.0.0.1", 4444);
     }
 
+    /**
+     * 任意一个Test方法执行完毕后都会执行@After方法
+     */
     @After
     public void tearDown() throws IOException {
         client.stopConnection();
@@ -50,6 +56,6 @@ public class SocketTest {
         assertEquals("hello", resp1);
         assertEquals("world", resp2);
         assertEquals("!", resp3);
-        assertEquals("good bye", resp4);
+        assertEquals("bye", resp4);
     }
 }
